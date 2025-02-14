@@ -20,7 +20,7 @@ This explains:
 - Stability of physical constants
 
 ## Contents
-- `paper.pdf`: Full paper
+- `min_p.pdf`: Full paper
 - `paper_raw.pdf`: Original paper (without AI polishing)
 - `paper.tex`: LaTeX source
 
