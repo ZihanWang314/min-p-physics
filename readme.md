@@ -21,6 +21,7 @@ This explains:
 
 ## Contents
 - `paper.pdf`: Full paper
+- `paper_raw.pdf`: Original paper (without AI polishing)
 - `paper.tex`: LaTeX source
 
 ## License
