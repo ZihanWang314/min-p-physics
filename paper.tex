@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[top=1cm,    % 上边距
+            bottom=2cm,  % 下边距
+            left=3cm,    % 左边距
+            right=3cm    % 右边距
+           ]{geometry}
+           
+\title{When the World Collapses: The Rule of Physics may use $min_p$ as a Regularization}
+\author{Claude Sonnet, Zihan Wang}
+
+\begin{document}
+
+\maketitle
+Our world contains randomness, yet maintains stability over time \cite{prigogine1984order, anderson1972more}. Catastrophic low-probability events, e.g., 1/10000 could theoretically collapse the system, but rarely manifest. In ML, without regularization, models generate nonsensical sequences \cite{holtzman2019curious}. While quantum mechanics allows phenomena like tunneling \cite{razavy2003quantum}, environmental decoherence naturally suppresses such effects at macroscopic scales - an elegant example of nature's built-in regularization. This suppression might be understood through multiple perspectives: either as quantum decoherence, as min-p regularization, or perhaps as different views of the same underlying principle \cite{barrow1988anthropic}.
+
+
+We define such catastrophic low-probability events as Catales (pronouncing like Katals). When time approaches infinity, Catales with constant probability must eventually occur:
+\[
+\lim_{t \to \infty} (1 - (1-p)^t) = 1
+\]
+
+Consider our universe as a docker with physics rules as parameters \cite{carter1974large}. To achieve stability as $t\to\infty$, some probability redistribution mechanism must exist. Two approaches:
+
+\section{Top-p vs Min-p Regularization}
+Top-p (nucleus sampling) \cite{holtzman2019curious} retains events within cumulative probability threshold. Given [0.9, 0.0001, ...], top-p=0.95 still allows some Catales.
+Min-p \cite{nguyen2024turningheat} eliminates events below threshold:
+\[
+p_{event} < min\_p \cdot (1-p_{event}) \implies p_{event} = 0
+\]
+Creating finite cutoff time T after which Catales cannot occur.
+
+\section{Natural Parallels}
+The universe seems to use similar mechanisms \cite{prigogine1984order}:
+\begin{itemize}
+    \item Quantum effects don't manifest macroscopically \cite{griffiths2018introduction}
+    \item Systems favor stable states
+    \item Physical constants act as regularization parameters \cite{barrow1988anthropic}
+\end{itemize}
+
+This appears in evolution too \cite{maynard1982evolution, nowak2006evolutionary}: species die when population stability (fitness) falls below 1. Without this cutoff, maladapted species could persist through random fluctuations, slowing evolution. Like min-p, this creates hard thresholds that eliminate unfavorable paths.
+
+\section{Implications}
+Effective ML algorithms often mirror natural processes - from physics to evolution to neuroscience \cite{anderson1972more}. This suggests universal principles governing stable complex systems. Understanding ML regularization might help us grasp how our universe maintains stability.
+
+This alignment between ML and natural laws might guide development of better societal systems. ML research could be key to understanding our universe's fundamental parameters \cite{carter1974large}.
+
+\begin{thebibliography}{99}
+\bibitem{anderson1972more}
+Anderson, P. W. (1972). More is different. \textit{Science}, 177(4047), 393-396.
+
+\bibitem{prigogine1984order}
+Prigogine, I., \& Stengers, I. (1984). \textit{Order out of chaos: Man's new dialogue with nature}. Bantam Books.
+
+\bibitem{razavy2003quantum}
+Razavy, M. (2003). \textit{Quantum theory of tunneling}. World Scientific.
+
+\bibitem{holtzman2019curious}
+Holtzman, A., Buys, J., Du, L., Forbes, M., \& Choi, Y. (2019). The curious case of neural text degeneration. \textit{arXiv preprint arXiv:1904.09751}.
+
+\bibitem{barrow1988anthropic}
+Barrow, J. D., \& Tipler, F. J. (1988). \textit{The anthropic cosmological principle}. Oxford University Press.
+
+\bibitem{carter1974large}
+Carter, B. (1974). Large number coincidences and the anthropic principle in cosmology. \textit{IAU Symposium}, 63, 291-298.
+
+\bibitem{griffiths2018introduction}
+Griffiths, D. J. (2018). \textit{Introduction to quantum mechanics}. Cambridge University Press.
+
+\bibitem{maynard1982evolution}
+Smith, J. M. (1982). \textit{Evolution and the theory of games}. Cambridge University Press.
+
+\bibitem{nowak2006evolutionary}
+Nowak, M. A. (2006). \textit{Evolutionary dynamics: Exploring the equations of life}. Harvard University Press.
+
+\bibitem{nguyen2024turningheat}
+Nguyen, M., Baker, A., Neo, C., Roush, A., Kirsch, A., \& Shwartz-Ziv, R. (2024). Turning up the heat: Min-p sampling for creative and coherent LLM outputs. \textit{arXiv preprint arXiv:2407.01082}.
+
+
+\end{thebibliography}
+
+\end{document}
